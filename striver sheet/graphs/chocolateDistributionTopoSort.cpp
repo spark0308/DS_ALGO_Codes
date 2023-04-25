@@ -22,7 +22,6 @@ int requiredChocolates(int V, vector<pair<int, int>> adj[]){
 
     while (!q.empty())
     {
-        /* code */
         int node = q.front();
         q.pop();
 

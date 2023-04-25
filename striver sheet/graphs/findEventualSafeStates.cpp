@@ -29,7 +29,6 @@ vector<int> safeStates(int V, vector<int> adj[]){
 
     while (!q.empty())
     {
-        /* code */
         int node = q.front();
         q.pop();
 
