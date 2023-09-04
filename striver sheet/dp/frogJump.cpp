@@ -2,6 +2,7 @@
 using namespace std;
 #define ll long long
 
+//Most optimal solution
 ll calculate_mimimum_reqired_energy(ll steps, vector<ll> heights){
     ll prev = 0;
     ll prev2 = 0;
