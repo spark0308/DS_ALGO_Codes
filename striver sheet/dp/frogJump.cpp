@@ -3,14 +3,13 @@ using namespace std;
 #define ll long long
 
 ll calculate_mimimum_reqired_energy(ll steps, vector<ll> heights){
-    //ll dp[steps];
-
     ll prev = 0;
-    ll prev2 = heights[1];
+    ll prev2 = 0;
 
-    for(ll i=2; i<steps; i++){
+    for(ll i=1; i<steps; i++){
         ll energy1 = prev + abs(heights[i] - heights[i-1]);
-        ll energy2 = prev2 + abs(heights[i] - heights[i-2]);
+        ll energy2 = INT_MAX;
+        if(i > 1) energy2 = prev2 + abs(heights[i] - heights[i-2]);
         ll curr = min(energy1, energy2);
 
         prev2 = prev;
