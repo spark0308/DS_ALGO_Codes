@@ -1,2 +1,5 @@
 #ignore all a.exe
 **/a.exe
+
+#ignore vscode folder
+.vscode
