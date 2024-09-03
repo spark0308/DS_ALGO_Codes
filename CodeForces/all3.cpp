@@ -14,7 +14,6 @@ int solution(int n, vector<int> arr)
     for (auto x : arr)
         mp[x]++;
 
-    //printMap(mp);
 
     for (int i = 0; i < n; i++)
     {
@@ -23,11 +22,6 @@ int solution(int n, vector<int> arr)
         {
             mp2[arr[j]]--;
             mp2[(arr[j]%3) + 1]++;
-            
-            //cout<<"map2\n";
-            //printMap(mp2);
-            //cout<<"map1\n";
-            //printMap(mp);
 
             if(mp2[1] > 0 && mp2[2] > 0 && mp2[3] > 0) ans++;
         }
