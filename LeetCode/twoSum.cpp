@@ -20,13 +20,24 @@ class Ouptut {
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
-            int n = nums.size();
-            for(int i=0; i<n-1; i++){
-                for(int j=i+1; j<n; j++){
-                    if(nums[i]+nums[j] == target) return {i, j};
-                }
+            int front = 0;
+            int back = nums.size() -1;
+            vector<pair<int, int>> numIndicesPair;
+            for(int i=0; i<nums.size(); i++){
+                numIndicesPair.push_back({nums[i], i});
             }
-
+            sort(numIndicesPair.begin(), numIndicesPair.end());
+            while (front < back)
+            {
+                int sum = numIndicesPair[front].first+numIndicesPair[back].first;
+                if(sum == target)
+                {
+                    return {numIndicesPair[front].second, numIndicesPair[back].second};
+                }
+                if(sum < target) front++;
+                if(sum > target) back--;
+                /* code */
+            }
             return {-1, -1};
         }
 };
